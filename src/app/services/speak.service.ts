@@ -27,7 +27,7 @@ export class SpeakService {
       console.log(this.voices);
       utterThis.pitch = 1.0;
       utterThis.rate = 1.0;
-      utterThis.voice = this.voices[17];
+      utterThis.voice = this.voices[16];
       this.synth.speak(utterThis);
 
   }
