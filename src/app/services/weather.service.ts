@@ -276,7 +276,7 @@ export class WeatherService {
               }
           };
           XHR.open('GET',
-                   'http://api.openweathermap.org/data/2.5/find?q=Moscow&units=metric&type=like&APPID=28f8ed9bac953b0e26819f8872047e4b');
+                   'https://api.openweathermap.org/data/2.5/find?q=Moscow&units=metric&type=like&APPID=28f8ed9bac953b0e26819f8872047e4b');
           XHR.send();
 
           console.log(this.result);
