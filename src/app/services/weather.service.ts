@@ -249,7 +249,7 @@ function speak(stringToSpeak: string, command: string) {
     voices = synth.getVoices();
     utterThis.pitch = 1.0;
     utterThis.rate = 1.0;
-    utterThis.voice = voices[17];
+    utterThis.voice = voices[16];
     synth.speak(utterThis);
   }
 }
