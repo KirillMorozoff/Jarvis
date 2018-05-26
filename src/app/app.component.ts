@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
   voices: any;
   synth: any;
 
-  constructor(private weatherService: WeatherService, private timeService: TimeService) {}
+  constructor(private weatherService: WeatherService, private timeService: TimeService, private speakService: SpeakService) {}
 
   ngOnInit() {
     this.synth = window.speechSynthesis;
@@ -26,7 +26,6 @@ export class AppComponent implements OnInit {
   submit() {
       this.command = document.getElementsByTagName('input')[0].value.toLowerCase();
       this.textarea = document.getElementById('textarea');
-
       if (this.command === 'будильник') {
           this.execute();
           this.command = '';
@@ -36,7 +35,10 @@ export class AppComponent implements OnInit {
 
           this.weatherService.returnWeather('');
       } else if (this.command === 'время') {
+          this.speakService.speak(this.timeService.getTime());
           this.execute();
+      } else if (this.command === 'таймер') {
+        this.execute();
       } else {
         this.execute();
     }
@@ -44,7 +46,6 @@ export class AppComponent implements OnInit {
 
   }
   execute() {
-
       this.textarea.value += this.timeService.getTime()
                                  .substring(this.timeService.getTime().length - 5, this.timeService.getTime()
                                  .length) + '..............................' + this.command + '\n';

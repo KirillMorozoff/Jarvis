@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { ClockComponent } from './vidgets/clock/clock.component';
 import { AlarmClockComponent } from './vidgets/alarm-clock/alarm-clock.component';
 import {FormsModule} from '@angular/forms';
+import { TimerComponent } from './vidgets/timer/timer.component';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import {FormsModule} from '@angular/forms';
     AppComponent,
     ClockComponent,
     AlarmClockComponent,
+    TimerComponent,
 
   ],
   imports: [

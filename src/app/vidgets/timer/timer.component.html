@@ -1,0 +1,18 @@
+<div class="input-group mb-2">
+  <select [(ngModel)]="selectedHour" class="custom-select mr-sm-2" id="h">
+    <option>00</option>
+    <option *ngFor="let number of hours" value="{{ number }}" >{{ number }}</option>
+  </select>
+  <select [(ngModel)]="selectedMinutes" class="custom-select mr-sm-2" id="m">
+    <option>00</option>
+    <option *ngFor="let number of minutes" value="{{ number }}">{{ number }}</option>
+  </select>
+  <select [(ngModel)]="selectedSeconds" class="custom-select mr-sm-2" id="s">
+    <option>00</option>
+    <option *ngFor="let number of seconds" value="{{ number }}">{{ number }}</option>
+  </select>
+  <div class="input-group-prepend">
+    <button id="vkl" class="btn btn-outline-secondary" type="button" (click)="submit()">Вкл</button>
+    <button id="vikl" class="btn btn-outline-secondary" type="button" (click)="stop()">Выкл</button>
+  </div>
+</div>

@@ -27,7 +27,11 @@ export class SpeakService {
       console.log(this.voices);
       utterThis.pitch = 1.0;
       utterThis.rate = 1.0;
-      utterThis.voice = this.voices[17];
+      for (let i = 0; i < this.voices.length; i++) {
+        if (this.voices[i].lang === 'ru-RU') {
+          utterThis.voice = this.voices[i];
+        }
+      }
       this.synth.speak(utterThis);
 
   }

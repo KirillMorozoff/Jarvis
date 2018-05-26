@@ -249,7 +249,12 @@ function speak(stringToSpeak: string, command: string) {
     voices = synth.getVoices();
     utterThis.pitch = 1.0;
     utterThis.rate = 1.0;
-    utterThis.voice = voices[17];
+    console.log(voices);
+    for (let i = 0; i < voices.length; i++) {
+      if (voices[i].lang === 'ru-RU') {
+        utterThis.voice = voices[i];
+      }
+    }
     synth.speak(utterThis);
   }
 }
@@ -276,7 +281,7 @@ export class WeatherService {
               }
           };
           XHR.open('GET',
-                   'http://api.openweathermap.org/data/2.5/find?q=Moscow&units=metric&type=like&APPID=28f8ed9bac953b0e26819f8872047e4b');
+                   'https://api.openweathermap.org/data/2.5/find?q=Moscow&units=metric&type=like&APPID=28f8ed9bac953b0e26819f8872047e4b');
           XHR.send();
 
           console.log(this.result);

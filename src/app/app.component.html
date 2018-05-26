@@ -3,11 +3,24 @@
   <div id="first" class="col-6 col-md-4">
     <wfm-clock></wfm-clock>
     <wfm-alarm-clock *ngIf="command ==='будильник'"></wfm-alarm-clock>
+    <wfm-timer *ngIf="command ==='таймер'"></wfm-timer>
     <!--<wfm-alarm-clock></wfm-alarm-clock>-->
 
   </div>
-  <div id="logo" class="col-6 col-md-4"><!--<img class="logo" src="../assets/JARVIS_Logo.png">--></div>
+  <div id="logo" class="col-6 col-md-4"><img class="logo" src="../assets/JARVIS_Logo.png"></div>
   <div id="input" class="col-6 col-md-4">
+
+  <div class="flexRow">
+      <div class="quickLink leftCol"><img id="timeIcon" src="../assets/time.svg">ВРЕМЯ</div>
+      <div class="quickLink"><img id="weatherIcon" src="../assets/weather.svg">ПОГОДА</div>
+  </div>
+  <div class="flexRow">
+      <div class="quickLink leftCol"><img id="alarmIcon" src="../assets/alarm.svg">БУДИЛЬНИК</div>
+      <div class="quickLink"><img id="timerIcon" src="../assets/timer.svg">ТАЙМЕР</div>
+  </div>
+
+<br>
+
         <div class="input-group"><textarea id="textarea" readonly rows="15" class="form-control"></textarea></div>
       <br>
       <div class="input-group input-group-sm mb-3">
