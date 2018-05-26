@@ -32,6 +32,7 @@ export class SpeakService {
           utterThis.voice = this.voices[i];
         }
       }
+
       this.synth.speak(utterThis);
 
   }

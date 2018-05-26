@@ -255,6 +255,7 @@ function speak(stringToSpeak: string, command: string) {
         utterThis.voice = voices[i];
       }
     }
+
     synth.speak(utterThis);
   }
 }
@@ -271,7 +272,8 @@ export class WeatherService {
                   if (XHR.status === 200) {
                       temp = JSON.parse(XHR.responseText).list[0].main.temp;
                       description = JSON.parse(XHR.responseText).list['0'].weather['0'].description;
-                      this.result = additionalString + '. ' + 'За окном. ' + Math.ceil(temp) + degreeWordForm(Math.ceil(temp)) + '.' + getWeather(description);
+                      this.result = additionalString + '. ' + 'За окном. '
+                        + Math.ceil(temp) + degreeWordForm(Math.ceil(temp)) + '.' + getWeather(description);
                       speak(this.result, 'погода');
                       return this.result;
                   } else {
